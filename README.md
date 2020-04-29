@@ -1,6 +1,6 @@
 # CatalogoMusical
 
-# Aplicação de teste para Configuraçlão de pipelines no Jenkins que envolvam:
+# Aplicação de teste para Configuração de pipelines no Jenkins que envolvam:
 PostgresBS, 
 Backeend: SpringBoot
 Frontend: Angular, NGINX
