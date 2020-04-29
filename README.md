@@ -1,5 +1,10 @@
 # CatalogoMusical
 
+# Aplicação de teste para Configuração de pipelines no Jenkins que envolvam:
+PostgresBS, 
+Backeend: SpringBoot
+Frontend: Angular, NGINX
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
 
 ## Development server
