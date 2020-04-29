@@ -1,1 +1,18 @@
 <p>banda-list works!</p>
+<p-table [value]="bandas" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+     <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>&nbsp;</th>
+     </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-banda>
+     <tr>
+      <td style="text-align: right;">{{banda.id}}</td>
+      <td>{{banda.nome}}</td>
+      <td><button pButton icon="pi pi-pencil" [routerLink]="['/banda/banda-add/', banda.id]" title="Selecionar Banda"></button><button pButton icon="pi pi-pencil" [routerLink]="['/album/banda/', banda.id]" title="Selecionar Albuns"></button></td>
+     </tr>
+    </ng-template>
+   </p-table>
+   

@@ -1,3 +1,4 @@
+import { MessageService, ConfirmationService } from 'primeng/api';
 import { MusicaModule } from './musica/musica.module';
 import { IntrumentoModule } from './intrumento/intrumento.module';
 import { Intrumento } from './intrumento/intrumento';
@@ -13,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PanelModule } from 'node_modules/primeng/panel';
 import { BandaModule } from './banda/banda.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,11 @@ import { BandaModule } from './banda/banda.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     PanelModule,
     BandaModule, AlbumModule, PaizModule, ArtistaModule, IntrumentoModule, MusicaModule
   ],
-  providers: [],
+  providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
