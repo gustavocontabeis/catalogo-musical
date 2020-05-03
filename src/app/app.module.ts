@@ -7,7 +7,7 @@ import { PaizModule } from './paiz/paiz.module';
 import { AlbumModule } from './album/album.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {MenubarModule} from 'primeng/menubar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -26,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    PanelModule,
+    PanelModule, MenubarModule,
     BandaModule, AlbumModule, PaizModule, ArtistaModule, IntrumentoModule, MusicaModule
   ],
   providers: [MessageService, ConfirmationService],
