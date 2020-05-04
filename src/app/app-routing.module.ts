@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'artista', loadChildren: './artista/artista.module#ArtistaModule'},
   { path: 'instrumento', loadChildren: './instrumento/instrumento.module#InstrumentoModule'},
   { path: 'musica', loadChildren: './musica/musica.module#MusicaModule'},
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  //{ path: '', redirectTo: 'home', pathMatch: 'full'},
 ];
 
 @NgModule({
