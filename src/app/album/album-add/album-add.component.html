@@ -1,3 +1,4 @@
+<p-panel header="Cadastro de" Albuns>
 <form #albumForm="ngForm" (ngSubmit)="onSubmit(albumForm)">
     <div class="ui-g ui-fluid" *ngIf="album">
      <div class="ui-g-12">
@@ -46,4 +47,5 @@
     <button pButton icon="pi pi-check" (click)="salvar()" label="Salvar" [disabled]="!albumForm.valid"></button>
     <button pButton icon="pi pi-times" (click)="confirmarExcluir()" label="Excluir" class="ui-button-secondary" *ngIf="album.id"></button>
    </div>
+  </p-panel>
    

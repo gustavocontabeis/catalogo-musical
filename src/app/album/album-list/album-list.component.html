@@ -1,23 +1,24 @@
-<p-table [value]="albums" [paginator]="true" [rows]="10">
-    <ng-template pTemplate="header">
-     <tr>
-      <th>Id</th>
-      <th>Nome</th>
-      <th>Ano</th>
-      <th>Banda</th>
-      <th>Estilo musical</th>
-      <th>&nbsp;</th>
-     </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-album>
-     <tr>
-      <td style="text-align: right;">{{album.id}}</td>
-      <td>{{album.nome}}</td>
-      <td style="text-align: right;">{{album.ano}}</td>
-      <td><a [routerLink]="['/banda/banda-add/', album.banda.id]">{{album.banda.nome}}</a></td>
-      <td>{{album.estiloMusical}}</td>
-      <td><button pButton icon="pi pi-pencil" [routerLink]="['/album/album-add/', album.id]" title="Selecionar Album"></button><button pButton icon="pi pi-pencil" [routerLink]="['/artista/album/', album.id]" title="Selecionar Artistas"></button><button pButton icon="pi pi-pencil" [routerLink]="['/musica/album/', album.id]" title="Selecionar Musicas"></button></td>
-     </tr>
-    </ng-template>
-   </p-table>
-   
+<p-panel header="Listagem de Albuns">
+    <p-table [value]="albums" [paginator]="true" [rows]="10">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Ano</th>
+                <th>Banda</th>
+                <th>Estilo musical</th>
+                <th>&nbsp;</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-album>
+            <tr>
+                <td style="text-align: right;">{{album.id}}</td>
+                <td>{{album.nome}}</td>
+                <td style="text-align: right;">{{album.ano}}</td>
+                <td><a [routerLink]="['/banda/banda-add/', album.banda.id]">{{album.banda.nome}}</a></td>
+                <td>{{album.estiloMusical}}</td>
+                <td><button pButton icon="pi pi-pencil" [routerLink]="['/album/album-add/', album.id]" title="Selecionar Album"></button><button pButton icon="pi pi-pencil" [routerLink]="['/artista/album/', album.id]" title="Selecionar Artistas"></button><button pButton icon="pi pi-pencil" [routerLink]="['/musica/album/', album.id]" title="Selecionar Musicas"></button></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-panel>

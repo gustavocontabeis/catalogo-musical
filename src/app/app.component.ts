@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
                     ]
                 },
                 {
-                    label: 'Álbum',
+                    label: 'Album',
                     icon: 'pi pi-fw pi-plus',
                     items: [
                         {label: 'Listagem', url: 'album/album-list', icon: 'pi pi-fw pi-list'},
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
                     ]
                 },
                 {
-                    label: 'Música',
+                    label: 'Musica',
                     icon: 'pi pi-fw pi-plus',
                     items: [
                         {label: 'Listagem', url: 'musica/musica-list', icon: 'pi pi-fw pi-list'},
