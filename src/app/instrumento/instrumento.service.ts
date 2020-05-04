@@ -1,4 +1,4 @@
-import { Intrumento } from './intrumento';
+import { Instrumento } from './instrumento';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -6,17 +6,17 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class IntrumentoService {
+export class InstrumentoService {
 
   apiUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.apiUrl = environment.apiUrl + '/intrumentos';
+    this.apiUrl = environment.apiUrl + '/instrumentos';
   }
 
-  adicionar(intrumento: Intrumento) {
-    console.log('adicionar', intrumento);
-    return this.httpClient.post(this.apiUrl, intrumento);
+  adicionar(instrumento: Instrumento) {
+    console.log('adicionar', instrumento);
+    return this.httpClient.post(this.apiUrl, instrumento);
   }
 
   buscar(id: number) {
@@ -29,9 +29,9 @@ export class IntrumentoService {
     return this.httpClient.get(this.apiUrl);
   }
 
-  excluir(intrumento: Intrumento) {
-    console.log('excluir', intrumento);
-    return this.httpClient.delete(this.apiUrl + '/' + intrumento.id);
+  excluir(instrumento: Instrumento) {
+    console.log('excluir', instrumento);
+    return this.httpClient.delete(this.apiUrl + '/' + instrumento.id);
   }
 
 }

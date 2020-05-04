@@ -6,6 +6,7 @@ import { PanelModule } from 'primeng/panel';
 import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { ArtistaService } from './artista.service';
 import { ArtistaRoutingModule } from './artista-routing.module';
@@ -16,7 +17,7 @@ import { ArtistaListComponent } from './artista-list/artista-list.component';
   declarations: [ArtistaAddComponent, ArtistaListComponent],
   imports: [
     CommonModule, FormsModule,
-    ToastModule, PanelModule, TableModule, ButtonModule,
+    ToastModule, PanelModule, TableModule, ButtonModule, DropdownModule,
     ArtistaRoutingModule,
   ],
   providers: [ArtistaService]

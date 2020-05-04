@@ -11,7 +11,7 @@ export class PaizService {
   apiUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.apiUrl = environment.apiUrl + '/paizs';
+    this.apiUrl = environment.apiUrl + '/paizes';
   }
 
   adicionar(paiz: Paiz) {

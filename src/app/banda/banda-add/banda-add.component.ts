@@ -63,6 +63,7 @@ export class BandaAddComponent implements OnInit {
 
   buscar(id: number) {
     this.bandaService.buscar(id).subscribe(resposta => {
+      console.log(resposta);
       this.banda = resposta as Banda;
     }, error => {
       console.log(error);

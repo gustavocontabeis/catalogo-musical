@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'album', loadChildren: './album/album.module#AlbumModule'},
   { path: 'paiz', loadChildren: './paiz/paiz.module#PaizModule'},
   { path: 'artista', loadChildren: './artista/artista.module#ArtistaModule'},
-  { path: 'intrumento', loadChildren: './intrumento/intrumento.module#IntrumentoModule'},
+  { path: 'instrumento', loadChildren: './instrumento/instrumento.module#InstrumentoModule'},
   { path: 'musica', loadChildren: './musica/musica.module#MusicaModule'},
   { path: '', redirectTo: 'home', pathMatch: 'full'},
 ];

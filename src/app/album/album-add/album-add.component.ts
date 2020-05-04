@@ -56,7 +56,12 @@ export class AlbumAddComponent implements OnInit {
 
     this.buscarBanda();
     this.activatedRoute.params.subscribe(params => {
-      if (params.id_banda) {
+
+      const id = params.id ? Number(params.id) : null;
+      if (id != null) {
+        console.log('contem id' + id);
+        this.buscar(id);
+      } else if (params.id_banda) {
         const idbanda = params.id_banda ? Number(params.id_banda) : null;
         this.buscarAlbumPorBanda(idbanda);
       } else {
@@ -77,6 +82,7 @@ export class AlbumAddComponent implements OnInit {
       alert(error.ok);
     }
     );
+    console.log(this.bandas);
   }
 
   buscarAlbumPorBanda(idBanda: number) {

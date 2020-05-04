@@ -1,7 +1,7 @@
 import { MessageService, ConfirmationService } from 'primeng/api';
 import { MusicaModule } from './musica/musica.module';
-import { IntrumentoModule } from './intrumento/intrumento.module';
-import { Intrumento } from './intrumento/intrumento';
+import { InstrumentoModule } from './instrumento/instrumento.module';
+import { Instrumento } from './instrumento/instrumento';
 import { ArtistaModule } from './artista/artista.module';
 import { PaizModule } from './paiz/paiz.module';
 import { AlbumModule } from './album/album.module';
@@ -27,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule,
     PanelModule, MenubarModule,
-    BandaModule, AlbumModule, PaizModule, ArtistaModule, IntrumentoModule, MusicaModule
+    BandaModule, AlbumModule, PaizModule, ArtistaModule, InstrumentoModule, MusicaModule
   ],
   providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent]

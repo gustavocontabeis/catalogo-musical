@@ -1,79 +1,91 @@
-
 import { Router, ActivatedRoute } from '@angular/router';
-import { PaizService } from '../paiz.service';
+import { InstrumentoService } from '../instrumento.service';
 import { Component, OnInit } from '@angular/core';
-import { Paiz } from '../paiz';
+import { Instrumento } from '../instrumento';
 import { MessageService, ConfirmationService, SelectItem } from 'primeng/api';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 @Component({
-  selector: 'app-paiz-list',
-  templateUrl: './paiz-list.component.html',
-  styleUrls: ['./paiz-list.component.css']
+  selector: 'app-instrumento-list',
+  templateUrl: './instrumento-list.component.html',
+  styleUrls: ['./instrumento-list.component.css']
 })
-export class PaizListComponent implements OnInit {
+export class InstrumentoListComponent implements OnInit {
 
-  paiz: Paiz = new Paiz();
-  paizs: Paiz[];
+  instrumento: Instrumento = new Instrumento();
+  instrumentos: Instrumento[];
   exibirDialog: boolean;
   novoRegistro: boolean;
-  
+
+//[declaracoes]
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
-    private paizService: PaizService) { }
+    private instrumentoService: InstrumentoService) { }
 
   ngOnInit() {
     this.exibirDialog = false;
     this.novoRegistro = false;
-    this.paiz = new Paiz();
-
-    this.consultar();
+    this.instrumento = new Instrumento();
+//[ngOnInit]
+//[buscarFK]
+    this.activatedRoute.params.subscribe(params => {
+      const id = params.id ? Number(params.id) : null;
+      console.log(id);
+      if (id != null) {
+      console.log('contem id: ' + id);
+        this.buscar(id);
+      }else{
+        this.consultar();
+      }
+    });
 
   }
 
+
   buscar(id: number) {
-    this.paizService.buscar(id).subscribe(resposta => {
-      this.paiz = resposta as Paiz;
+    this.instrumentoService.buscar(id).subscribe(resposta => {
+      this.instrumento = resposta as Instrumento;
     }, error => {
       console.log(error);
-      alert('erro paizs.' + error);
+      alert('erro instrumentos.' + error);
     });
   }
 
   consultar() {
-    this.paizService.consultar().subscribe(resposta => {
-      this.paizs = resposta as Paiz[];
+    this.instrumentoService.consultar().subscribe(resposta => {
+      this.instrumentos = resposta as Instrumento[];
     }, error => {
       console.log(error);
-      alert('erro paizs.' + error);
+      alert('erro instrumentos.' + error);
     });
   }
 
   novo() {
-    const paiz = new Paiz();
-    this.exibirModal(paiz);
+    const instrumento = new Instrumento();
+    this.exibirModal(instrumento);
   }
 
-  exibirModal(paiz: Paiz) {
+  exibirModal(instrumento: Instrumento) {
     this.novoRegistro = true;
     this.exibirDialog = true;
-    this.paiz = paiz;
+    this.instrumento = instrumento;
   }
 
   salvar() {
     console.log('salvar');
-    this.paizService.adicionar(this.paiz).subscribe(resposta => {
+    this.instrumentoService.adicionar(this.instrumento).subscribe(resposta => {
       this.consultar();
       this.exibirDialog = false;
       this.novoRegistro = false;
       this.messageService.add({severity: 'success', summary: 'OK', detail: 'Registro adicionado com sucesso.'});
-      this.router.navigate(['/paiz/paiz-list']);
+      this.router.navigate(['/instrumento/instrumento-list']);
       }, error => {
         console.log(error);
-        alert(error.message);
+        alert(error.ok);
       }
     );
   }
@@ -94,20 +106,20 @@ export class PaizListComponent implements OnInit {
 
   excluir() {
     console.log('excluir');
-    this.paizService.excluir(this.paiz).subscribe(resposta => {
+    this.instrumentoService.excluir(this.instrumento).subscribe(resposta => {
       this.consultar();
       this.exibirDialog = false;
       this.novoRegistro = false;
       this.messageService.add({severity: 'success', summary: 'OK', detail: 'Registro excluído com sucesso.'});
-      }, error => alert('erro paizs.')
+      }, error => alert('erro instrumentos.')
     );
   }
 
   aoSelecionar(event) {
     this.novoRegistro = false;
   }
-  
-  onSubmit(paizForm) {
+
+  onSubmit(instrumentoForm) {
 
   }
 

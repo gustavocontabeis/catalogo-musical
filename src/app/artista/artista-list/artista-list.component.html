@@ -1,1 +1,23 @@
-<p>artista-list works!</p>
+<p-table [value]="artistas" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+     <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Nascimento</th>
+      <th>Genero</th>
+      <th>Paiz origem</th>
+      <th>&nbsp;</th>
+     </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-artista>
+     <tr>
+      <td style="text-align: right;">{{artista.id}}</td>
+      <td>{{artista.nome}}</td>
+      <td>{{artista.nascimento2 | date: 'dd/MM/yyyy hh:mm:ss'}}</td>
+      <td>{{artista.genero}}</td>
+      <td><a [routerLink]="['/paiz/paiz-add/', artista.paizOrigem.id]">{{artista.paizOrigem.nome}}</a></td>
+      <td><button pButton icon="pi pi-pencil" [routerLink]="['/artista/artista-add/', artista.id]" title="Selecionar Artista"></button><button pButton icon="pi pi-pencil" [routerLink]="['/instrumento/artista/', artista.id]" title="Selecionar Instrumento"></button></td>
+     </tr>
+    </ng-template>
+   </p-table>
+   

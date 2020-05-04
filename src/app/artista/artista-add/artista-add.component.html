@@ -1,1 +1,61 @@
 <p>artista-add works!</p>
+<form #artistaForm="ngForm" (ngSubmit)="onSubmit(artistaForm)">
+    <div class="ui-g ui-fluid" *ngIf="artista">
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-id" for="id">Id</label>
+      </div>
+      <div class="ui-g-8 input">
+       <input id="id" name="id" #id="ngModel" pKeyFilter="int" placeholder="Id" [(ngModel)]="artista.id" [required]="false" pattern="^\d+$">
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-nome" for="nome">Nome</label>
+      </div>
+      <div class="ui-g-8 input">
+       <input id="nome" name="nome" #nome="ngModel" pInputText placeholder="Nome" [(ngModel)]="artista.nome" [required]="true">
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-nascimento" for="nascimento">Nascimento</label>
+      </div>
+      <div class="ui-g-8 input">
+        <input id="nascimento" name="nascimento" #nascimento="ngModel" pInputText placeholder="nascimento" [(ngModel)]="artista.nascimento" [required]="true">
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-genero" for="genero">Genero</label>
+      </div>
+      <div class="ui-g-8 input">
+       <select 
+            name="genero" 
+            id="genero" 
+            class="form-control"
+            [(ngModel)]="artista.genero">
+            <option *ngFor="let genero of generos" [value]="genero.value">{{genero.label}}</option>
+        </select>
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-paizOrigem" for="paizOrigem">Paiz origem</label>
+      </div>
+      <div class="ui-g-8 input">
+        <p-dropdown id="paizOrigem" name="paizOrigem" #paizOrigem="ngModel" [options]="paizOrigems" [(ngModel)]="artista.paizOrigem" [required]="true"></p-dropdown>
+      </div>
+     </div>
+    </div>
+   </form>
+   <div class="ui-dialog-buttonpane ui-helper-clearfix">
+    <button pButton icon="pi pi-check" (click)="salvar()" label="Salvar" [disabled]="!artistaForm.valid"></button>
+    <button pButton icon="pi pi-times" (click)="confirmarExcluir()" label="Excluir" class="ui-button-secondary" *ngIf="artista.id"></button>
+   </div>
+   
+
+   <!--
+       <p-calendar id="nascimento" name="nascimento" #nascimento="ngModel" dateFormat="dd/mm/yy" [(ngModel)]="artista.nascimento" [required]="true"></p-calendar>
+       <input id="nascimento" name="nascimento" #nascimento="ngModel" pInputText placeholder="nascimento" [(ngModel)]="artista.nascimento" [required]="true">
+   -->

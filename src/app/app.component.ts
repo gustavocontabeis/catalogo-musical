@@ -48,11 +48,11 @@ export class AppComponent implements OnInit {
                     ]
                 },
                 {
-                    label: 'Intrumento',
+                    label: 'Instrumento',
                     icon: 'pi pi-fw pi-plus',
                     items: [
-                        {label: 'Listagem', url: 'intrumento/intrumento-list', icon: 'pi pi-fw pi-list'},
-                        {label: 'Cadastro', url: 'intrumento/intrumento-add', icon: 'pi pi-fw pi-plus'},
+                        {label: 'Listagem', url: 'instrumento/instrumento-list', icon: 'pi pi-fw pi-list'},
+                        {label: 'Cadastro', url: 'instrumento/instrumento-add', icon: 'pi pi-fw pi-plus'},
                     ]
                 },
                 {

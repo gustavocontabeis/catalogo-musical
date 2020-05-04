@@ -1,0 +1,26 @@
+<p>instrumento-add works!</p>
+<form #instrumentoForm="ngForm" (ngSubmit)="onSubmit(instrumentoForm)">
+    <div class="ui-g ui-fluid" *ngIf="instrumento">
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-id" for="id">Id</label>
+      </div>
+      <div class="ui-g-8 input">
+       <input id="id" name="id" #id="ngModel" pKeyFilter="int" placeholder="Id" [(ngModel)]="instrumento.id" [required]="false" pattern="^\d+$">
+      </div>
+     </div>
+     <div class="ui-g-12">
+      <div class="ui-g-4 label">
+       <label id="label-nome" for="nome">Nome</label>
+      </div>
+      <div class="ui-g-8 input">
+       <input id="nome" name="nome" #nome="ngModel" pInputText placeholder="Nome" [(ngModel)]="instrumento.nome" [required]="true">
+      </div>
+     </div>
+    </div>
+   </form>
+   <div class="ui-dialog-buttonpane ui-helper-clearfix">
+    <button pButton icon="pi pi-check" (click)="salvar()" label="Salvar" [disabled]="!instrumentoForm.valid"></button>
+    <button pButton icon="pi pi-times" (click)="confirmarExcluir()" label="Excluir" class="ui-button-secondary" *ngIf="instrumento.id"></button>
+   </div>
+   
