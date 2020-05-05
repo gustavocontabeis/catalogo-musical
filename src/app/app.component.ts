@@ -19,48 +19,48 @@ export class AppComponent implements OnInit {
                     label: 'Banda',
                     icon: 'pi pi-fw pi-plus',
                     items: [
-                        {label: 'Listagem', url: 'banda/banda-list' , icon: 'pi pi-fw pi-list'},
-                        {label: 'Cadastro', url: 'banda/banda-add', icon: 'pi pi-fw pi-plus'},
+                        {label: 'Listagem', routerLink: 'banda/banda-list' , icon: 'pi pi-fw pi-list'},
+                        {label: 'Cadastro', routerLink: 'banda/banda-add', icon: 'pi pi-fw pi-plus'},
                     ]
                 },
                 {
                     label: 'Album',
                     icon: 'pi pi-fw pi-plus',
                     items: [
-                        {label: 'Listagem', url: 'album/album-list', icon: 'pi pi-fw pi-list'},
-                        {label: 'Cadastro', url: 'album/album-add', icon: 'pi pi-fw pi-plus'},
+                        {label: 'Listagem', routerLink: 'album/album-list', icon: 'pi pi-fw pi-list'},
+                        {label: 'Cadastro', routerLink: 'album/album-add', icon: 'pi pi-fw pi-plus'},
                     ]
                 },
                 {
                     label: 'Paiz',
                     icon: 'pi pi-fw pi-plus',
                     items: [
-                        {label: 'Listagem', url: 'paiz/paiz-list', icon: 'pi pi-fw pi-list'},
-                        {label: 'Cadastro', url: 'paiz/paiz-add', icon: 'pi pi-fw pi-plus'},
+                        {label: 'Listagem', routerLink: 'paiz/paiz-list', icon: 'pi pi-fw pi-list'},
+                        {label: 'Cadastro', routerLink: 'paiz/paiz-add', icon: 'pi pi-fw pi-plus'},
                     ]
                 },
                 {
                     label: 'Artista',
                     icon: 'pi pi-fw pi-star-o',
                     items: [
-                        {label: 'Listagem', url: 'artista/artista-list', icon: 'pi pi-fw pi-list'},
-                        {label: 'Cadastro', url: 'artista/artista-add', icon: 'pi pi-fw pi-plus'},
+                        {label: 'Listagem', routerLink: 'artista/artista-list', icon: 'pi pi-fw pi-list'},
+                        {label: 'Cadastro', routerLink: 'artista/artista-add', icon: 'pi pi-fw pi-plus'},
                     ]
                 },
                 {
                     label: 'Instrumento',
                     icon: 'pi pi-fw pi-plus',
                     items: [
-                        {label: 'Listagem', url: 'instrumento/instrumento-list', icon: 'pi pi-fw pi-list'},
-                        {label: 'Cadastro', url: 'instrumento/instrumento-add', icon: 'pi pi-fw pi-plus'},
+                        {label: 'Listagem', routerLink: 'instrumento/instrumento-list', icon: 'pi pi-fw pi-list'},
+                        {label: 'Cadastro', routerLink: 'instrumento/instrumento-add', icon: 'pi pi-fw pi-plus'},
                     ]
                 },
                 {
                     label: 'Musica',
                     icon: 'pi pi-fw pi-plus',
                     items: [
-                        {label: 'Listagem', url: 'musica/musica-list', icon: 'pi pi-fw pi-list'},
-                        {label: 'Cadastro', url: 'musica/musica-add', icon: 'pi pi-fw pi-plus'},
+                        {label: 'Listagem', routerLink: 'musica/musica-list', icon: 'pi pi-fw pi-list'},
+                        {label: 'Cadastro', routerLink: 'musica/musica-add', icon: 'pi pi-fw pi-plus'},
                     ]
                 },
             ]
