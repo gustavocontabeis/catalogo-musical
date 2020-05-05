@@ -6,6 +6,7 @@ import { PanelModule } from 'primeng/panel';
 import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { MusicaService } from './musica.service';
 import { MusicaRoutingModule } from './musica-routing.module';
@@ -16,7 +17,7 @@ import { MusicaListComponent } from './musica-list/musica-list.component';
   declarations: [MusicaAddComponent, MusicaListComponent],
   imports: [
     CommonModule, FormsModule,
-    ToastModule, PanelModule, TableModule, ButtonModule,
+    ToastModule, PanelModule, TableModule, ButtonModule, DropdownModule,
     MusicaRoutingModule,
   ],
   providers: [MusicaService]

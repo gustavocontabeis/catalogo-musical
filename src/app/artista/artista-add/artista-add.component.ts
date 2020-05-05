@@ -20,6 +20,7 @@ export class ArtistaAddComponent implements OnInit {
   artistas: Artista[];
   exibirDialog: boolean;
   novoRegistro: boolean;
+  dtNascimento: Date;
 
   generos: SelectItem[] = [];
   paizOrigems: SelectItem[] = [];

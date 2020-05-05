@@ -44,10 +44,10 @@ export class AlbumAddComponent implements OnInit {
     this.bandas = [];
     this.estiloMusicals = [{ label: 'Selecione', value: null },
     { label: 'ROCK', value: 'ROCK' },
-    { label: 'HEAVY_METAL', value: 'HEAVY_METAL' },
-    { label: 'HARD_ROCK', value: 'HARD_ROCK' },
+    { label: 'HEAVY METAL', value: 'HEAVY_METAL' },
+    { label: 'HARD ROCK', value: 'HARD_ROCK' },
     { label: 'GLAM', value: 'GLAM' },
-    { label: 'ROCK_BRASILEIRO', value: 'ROCK_BRASILEIRO' },
+    { label: 'ROCK BRASILEIRO', value: 'ROCK_BRASILEIRO' },
     { label: 'COUNTRY', value: 'COUNTRY' },
     ];
 

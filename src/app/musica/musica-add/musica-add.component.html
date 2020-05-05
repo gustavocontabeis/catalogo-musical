@@ -1,3 +1,59 @@
 <p-panel header="Cadastro de musicas">
-
+    <form #musicaForm="ngForm" (ngSubmit)="onSubmit(musicaForm)">
+        <div class="ui-g ui-fluid" *ngIf="musica">
+         <div class="ui-g-12">
+          <div class="ui-g-4 label">
+           <label id="label-id" for="id">Id</label>
+          </div>
+          <div class="ui-g-8 input">
+           <input id="id" name="id" #id="ngModel" pKeyFilter="int" placeholder="Id" [(ngModel)]="musica.id" [required]="false" pattern="^\d+$">
+          </div>
+         </div>
+         <div class="ui-g-12">
+          <div class="ui-g-4 label">
+           <label id="label-nome" for="nome">Nome</label>
+          </div>
+          <div class="ui-g-8 input">
+           <input id="nome" name="nome" #nome="ngModel" pInputText placeholder="Nome" [(ngModel)]="musica.nome" [required]="true">
+          </div>
+         </div>
+         <div class="ui-g-12">
+          <div class="ui-g-4 label">
+           <label id="label-album" for="album">Album</label>
+          </div>
+          <div class="ui-g-8 input">
+           <p-dropdown id="album" name="album" #album="ngModel" [options]="albums" [(ngModel)]="musica.album" [required]="true"></p-dropdown>
+          </div>
+         </div>
+         <div class="ui-g-12">
+          <div class="ui-g-4 label">
+           <label id="label-letraEn" for="letraEn">Letra en</label>
+          </div>
+          <div class="ui-g-8 input">
+           <input id="letraEn" name="letraEn" #letraEn="ngModel" pInputText placeholder="Letra en" [(ngModel)]="musica.letraEn" [required]="false">
+          </div>
+         </div>
+         <div class="ui-g-12">
+          <div class="ui-g-4 label">
+           <label id="label-letraPt" for="letraPt">Letra pt</label>
+          </div>
+          <div class="ui-g-8 input">
+           <input id="letraPt" name="letraPt" #letraPt="ngModel" pInputText placeholder="Letra pt" [(ngModel)]="musica.letraPt" [required]="false">
+          </div>
+         </div>
+         <div class="ui-g-12">
+          <div class="ui-g-4 label">
+           <label id="label-partitura" for="partitura">Partitura</label>
+          </div>
+          <div class="ui-g-8 input">
+           <input id="partitura" name="partitura" #partitura="ngModel" pInputText placeholder="Partitura" [(ngModel)]="musica.partitura" [required]="false">
+          </div>
+         </div>
+        </div>
+       </form>
+       <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button pButton icon="pi pi-check" (click)="salvar()" label="Salvar" [disabled]="!musicaForm.valid"></button>
+        <button pButton icon="pi pi-times" (click)="confirmarExcluir()" label="Excluir" class="ui-button-secondary" *ngIf="musica.id"></button>
+       </div>
+       
 </p-panel>

@@ -1,3 +1,21 @@
 <p-panel header="Listagem de musicas">
-
+    <p-table [value]="musicas" [paginator]="true" [rows]="10">
+        <ng-template pTemplate="header">
+         <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Album</th>
+          <th>&nbsp;</th>
+         </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-musica>
+         <tr>
+          <td style="text-align: right;">{{musica.id}}</td>
+          <td>{{musica.nome}}</td>
+          <td><a [routerLink]="['/album/album-add/', musica.album.id]">{{musica.album.nome}}</a></td>
+          <td><button pButton icon="pi pi-pencil" [routerLink]="['/musica/musica-add/', musica.id]" title="Selecionar Musica"></button></td>
+         </tr>
+        </ng-template>
+       </p-table>
+       
 </p-panel>
