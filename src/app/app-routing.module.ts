@@ -1,10 +1,12 @@
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'banda', loadChildren: './banda/banda.module#BandaModule'},
   { path: 'album', loadChildren: './album/album.module#AlbumModule'},
   { path: 'paiz', loadChildren: './paiz/paiz.module#PaizModule'},

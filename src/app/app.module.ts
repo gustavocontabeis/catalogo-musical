@@ -1,3 +1,5 @@
+import { LoginService } from './login/login.service';
+import { LoginComponent } from './login/login.component';
 import { MessageService, ConfirmationService } from 'primeng/api';
 import { MusicaModule } from './musica/musica.module';
 import { InstrumentoModule } from './instrumento/instrumento.module';
@@ -21,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     PanelModule, MenubarModule, CalendarModule,
     BandaModule, AlbumModule, PaizModule, ArtistaModule, InstrumentoModule, MusicaModule
   ],
-  providers: [MessageService, ConfirmationService],
+  providers: [MessageService, ConfirmationService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
