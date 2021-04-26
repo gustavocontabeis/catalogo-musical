@@ -1,4 +1,8 @@
 <p-panel header="Listagem de Bandas">
+  <p-menubar>
+    <button pButton label="Novo" icon="pi pi-plus" [routerLink]="['/banda/banda-add/']"></button>
+</p-menubar>
+<br/>
 <p-table [value]="bandas" [paginator]="true" [rows]="10">
     <ng-template pTemplate="header">
      <tr>

@@ -13,12 +13,13 @@ import { ArtistaService } from './artista.service';
 import { ArtistaRoutingModule } from './artista-routing.module';
 import { ArtistaAddComponent } from './artista-add/artista-add.component';
 import { ArtistaListComponent } from './artista-list/artista-list.component';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [ArtistaAddComponent, ArtistaListComponent],
   imports: [
     CommonModule, FormsModule,
-    ToastModule, PanelModule, TableModule, ButtonModule, DropdownModule, CalendarModule,
+    ToastModule, PanelModule, TableModule, ButtonModule, DropdownModule, CalendarModule, MenubarModule,
     ArtistaRoutingModule,
   ],
   providers: [ArtistaService]

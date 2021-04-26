@@ -7,6 +7,7 @@ import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
+import {MenubarModule} from 'primeng/menubar';
 
 import { AlbumService } from './album.service';
 import { AlbumRoutingModule } from './album-routing.module';
@@ -17,7 +18,7 @@ import { AlbumListComponent } from './album-list/album-list.component';
   declarations: [AlbumAddComponent, AlbumListComponent],
   imports: [
     CommonModule, FormsModule,
-    ToastModule, PanelModule, TableModule, ButtonModule, DropdownModule,
+    ToastModule, PanelModule, TableModule, ButtonModule, DropdownModule, MenubarModule,
     AlbumRoutingModule,
   ],
   providers: [AlbumService]

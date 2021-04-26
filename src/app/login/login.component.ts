@@ -1,5 +1,7 @@
+import { environment } from './../../environments/environment';
 import { LoginService } from './login.service';
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -12,30 +14,56 @@ export class LoginComponent implements OnInit {
   password: string;
   exibirResposta: any;
 
-  constructor(private loginService: LoginService) { }
+  apiUrl: string;
+
+  constructor(
+    private loginService: LoginService,
+    private httpClient: HttpClient) {
+      this.apiUrl = environment.apiUrl + '/bandas';
+    }
 
   ngOnInit(): void {
-    this.username = 'ok';
+    // this.username = 'ok';
+    // this.password = '123';
+    this.username = 'emploee1';
     this.password = '123';
   }
 
   login() {
     console.log('login');
     this.loginService.login().subscribe(resposta => {
-      const respostaAny = resposta as any;
-      this.exibirResposta = respostaAny;
-      console.log(respostaAny);
-      localStorage.setItem('id_token', respostaAny.access_token);
+      console.log(resposta);
+      // const respostaAny = resposta as any;
+      // this.exibirResposta = respostaAny;
+      // console.log(respostaAny);
+      // localStorage.setItem('token', respostaAny.access_token);
       }, error => {
+        alert('error component!');
         console.log(error);
-        alert(error.ok);
+        alert('OK? ' + error.ok);
       }
     );
   }
 
   logout() {
-    localStorage.removeItem('id_token');
+    localStorage.removeItem('token');
     this.exibirResposta = null;
+  }
+
+  naoAutorizado() {
+    console.log('naoAutorizado');
+    this.loginService.naoAutorizado().subscribe(resposta => {
+      console.log(resposta);
+      // const respostaAny = resposta as any;
+      // this.exibirResposta = respostaAny;
+      // console.log(respostaAny);
+      // localStorage.setItem('token', respostaAny.access_token);
+      }, error => {
+        alert('erro component!');
+        console.log(error);
+        alert(error.ok);
+      }
+    );
   }
 
   onSubmit(loginForm) {

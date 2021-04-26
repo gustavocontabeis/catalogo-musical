@@ -1,4 +1,8 @@
 <p-panel header="Listagem de Paizes">
+    <p-menubar>
+        <button pButton label="Novo" icon="pi pi-plus" [routerLink]="['/paiz/paiz-add/']"></button>
+    </p-menubar>
+    <br/>
     <p-table [value]="paizs" [paginator]="true" [rows]="10">
         <ng-template pTemplate="header">
             <tr>

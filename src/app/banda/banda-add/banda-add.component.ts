@@ -38,7 +38,8 @@ export class BandaAddComponent implements OnInit {
 
     this.buscarAlbuns();
     this.activatedRoute.params.subscribe(params => {
-      const id = params.id ? Number(params.id) : null;
+
+      const id = params.id ? +params.id : null;
       console.log(id);
       if (id != null) {
         console.log('contem id' + id);
@@ -104,6 +105,10 @@ export class BandaAddComponent implements OnInit {
       alert(error.ok);
     }
     );
+  }
+
+  listar() {
+    this.router.navigate(['/banda/banda-list']);
   }
 
   confirmarExcluir() {

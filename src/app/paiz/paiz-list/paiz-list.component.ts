@@ -17,7 +17,7 @@ export class PaizListComponent implements OnInit {
   paizs: Paiz[];
   exibirDialog: boolean;
   novoRegistro: boolean;
-  
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -106,7 +106,7 @@ export class PaizListComponent implements OnInit {
   aoSelecionar(event) {
     this.novoRegistro = false;
   }
-  
+
   onSubmit(paizForm) {
 
   }

@@ -46,6 +46,7 @@
    <div class="ui-dialog-buttonpane ui-helper-clearfix">
     <button pButton icon="pi pi-check" (click)="salvar()" label="Salvar" [disabled]="!albumForm.valid"></button>
     <button pButton icon="pi pi-times" (click)="confirmarExcluir()" label="Excluir" class="ui-button-secondary" *ngIf="album.id"></button>
+    <button pButton icon="pi pi-times" (click)="listar()" label="Listar" class="ui-button-secondary"></button>
    </div>
   </p-panel>
    

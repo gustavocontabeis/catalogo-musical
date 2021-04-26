@@ -12,12 +12,13 @@ import { MusicaService } from './musica.service';
 import { MusicaRoutingModule } from './musica-routing.module';
 import { MusicaAddComponent } from './musica-add/musica-add.component';
 import { MusicaListComponent } from './musica-list/musica-list.component';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [MusicaAddComponent, MusicaListComponent],
   imports: [
     CommonModule, FormsModule,
-    ToastModule, PanelModule, TableModule, ButtonModule, DropdownModule,
+    ToastModule, PanelModule, TableModule, ButtonModule, DropdownModule, MenubarModule,
     MusicaRoutingModule,
   ],
   providers: [MusicaService]

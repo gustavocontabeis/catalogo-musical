@@ -1,7 +1,7 @@
 import { MusicaService } from './../../musica/musica.service';
 import { ArtistaService } from './../../artista/artista.service';
 import { BandaService } from 'src/app/banda/banda.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { AlbumService } from '../album.service';
 import { Component, OnInit } from '@angular/core';
 import { Album } from '../album';
@@ -13,10 +13,11 @@ import { Musica } from 'src/app/musica/musica';
 
 @Component({
   selector: 'app-album-add',
-  templateUrl: './album-add.component.html',
-  styleUrls: ['./album-add.component.css']
+  templateUrl: './album-add.component.html'
 })
 export class AlbumAddComponent implements OnInit {
+
+  params: Params;
 
   album: Album = new Album();
   albums: Album[];
@@ -27,7 +28,6 @@ export class AlbumAddComponent implements OnInit {
   estiloMusicals: SelectItem[] = [];
   artistas: SelectItem[] = [];
   musicas: SelectItem[] = [];
-
 
   constructor(
     private router: Router,
@@ -54,10 +54,21 @@ export class AlbumAddComponent implements OnInit {
     this.artistas = [];
     this.musicas = [];
 
+    this.activatedRoute.queryParams.subscribe(params => {
+      console.log('Parametros URL:');
+      console.log(params);
+      this.params = params;
+    });
+    console.log('buscarBanda-1');
     this.buscarBanda();
+    console.log('buscarBanda-2');
+
     this.activatedRoute.params.subscribe(params => {
 
-      const id = params.id ? Number(params.id) : null;
+      const id = params.id ? +params.id : null;
+      const idBanda = params.id_banda ? +params.id_banda : null;
+      console.log('banda', idBanda);
+
       if (id != null) {
         console.log('contem id' + id);
         this.buscar(id);
@@ -67,6 +78,7 @@ export class AlbumAddComponent implements OnInit {
       } else {
         this.consultar();
       }
+
     });
 
   }
@@ -77,6 +89,13 @@ export class AlbumAddComponent implements OnInit {
       itens.forEach(element => {
         this.bandas.push({ label: element.nome, value: element });
       });
+      if (this.params) {
+        this.bandas.forEach(item => {
+          if (this.params.bandaId === item.value.id) {
+            this.album.banda = item.value;
+          }
+        });
+      }
     }, error => {
       console.log(error);
       alert(error.ok);
@@ -161,6 +180,10 @@ export class AlbumAddComponent implements OnInit {
       this.messageService.add({ severity: 'success', summary: 'OK', detail: 'Registro excluído com sucesso.' });
     }, error => alert('erro albums.')
     );
+  }
+
+  listar() {
+    this.router.navigate(['/album/album-list']);
   }
 
   aoSelecionar(event) {

@@ -11,12 +11,13 @@ import { InstrumentoService } from './instrumento.service';
 import { InstrumentoRoutingModule } from './instrumento-routing.module';
 import { InstrumentoAddComponent } from './instrumento-add/instrumento-add.component';
 import { InstrumentoListComponent } from './instrumento-list/instrumento-list.component';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [InstrumentoAddComponent, InstrumentoListComponent],
   imports: [
     CommonModule, FormsModule,
-    ToastModule, PanelModule, TableModule, ButtonModule,
+    ToastModule, PanelModule, TableModule, ButtonModule, MenubarModule,
     InstrumentoRoutingModule,
   ],
   providers: [InstrumentoService]

@@ -7,6 +7,7 @@ import { AlbumListComponent } from './album-list/album-list.component';
 const routes: Routes = [
   { path: 'album-add', component: AlbumAddComponent },
   { path: 'album-add/:id', component: AlbumAddComponent },
+  { path: 'album-add/banda/:id_banda', component: AlbumAddComponent },
   { path: 'album-list', component: AlbumListComponent },
   { path: 'banda/:id_banda', component: AlbumListComponent },
 ];

@@ -1,4 +1,8 @@
 <p-panel header="Listagem de Albuns">
+    <p-menubar>
+        <button pButton label="Novo" icon="pi pi-plus" [routerLink]="['/album/album-add/']"></button>
+    </p-menubar>
+    <br/>
     <p-table [value]="albums" [paginator]="true" [rows]="10">
         <ng-template pTemplate="header">
             <tr>

@@ -1,4 +1,8 @@
 <p-panel header="Listagem de musicas">
+    <p-menubar>
+        <button pButton label="Novo" icon="pi pi-plus" [routerLink]="['/musica/musica-add/']"></button>
+    </p-menubar>
+    <br/>
     <p-table [value]="musicas" [paginator]="true" [rows]="10">
         <ng-template pTemplate="header">
          <tr>

@@ -11,12 +11,13 @@ import { PaizService } from './paiz.service';
 import { PaizRoutingModule } from './paiz-routing.module';
 import { PaizAddComponent } from './paiz-add/paiz-add.component';
 import { PaizListComponent } from './paiz-list/paiz-list.component';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [PaizAddComponent, PaizListComponent],
   imports: [
     CommonModule, FormsModule,
-    ToastModule, PanelModule, TableModule, ButtonModule,
+    ToastModule, PanelModule, TableModule, ButtonModule, MenubarModule,
     PaizRoutingModule,
   ],
   providers: [PaizService]

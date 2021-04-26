@@ -16,15 +16,18 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PanelModule } from 'node_modules/primeng/panel';
 import { CalendarModule } from 'primeng/calendar';
+import { AuthInterceptor } from './login/auth.interceptor';
 
 import { BandaModule } from './banda/banda.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NaoAutorizadoComponent } from './nao-autorizado/nao-autorizado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    NaoAutorizadoComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,12 @@ import { HttpClientModule } from '@angular/common/http';
     PanelModule, MenubarModule, CalendarModule,
     BandaModule, AlbumModule, PaizModule, ArtistaModule, InstrumentoModule, MusicaModule
   ],
-  providers: [MessageService, ConfirmationService, LoginService],
+  providers: [MessageService, ConfirmationService, LoginService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

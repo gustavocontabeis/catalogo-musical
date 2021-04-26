@@ -16,6 +16,7 @@ export class AlbumListComponent implements OnInit {
 
   album: Album = new Album();
   albums: Album[];
+  banda: Banda;
   exibirDialog: boolean;
   novoRegistro: boolean;
 
@@ -23,7 +24,6 @@ export class AlbumListComponent implements OnInit {
   estiloMusicals: SelectItem[] = [];
   artistas: SelectItem[] = [];
   musicas: SelectItem[] = [];
-
 
   constructor(
     private router: Router,
@@ -49,20 +49,22 @@ export class AlbumListComponent implements OnInit {
     this.artistas = [];
     this.musicas = [];
 
-    this.buscarBanda();
-    //this.buscarArtistas();
-    //this.buscarMusicas();
+    // this.buscarBanda();
+
+    // this.buscarArtistas();
+    // this.buscarMusicas();
 
     this.activatedRoute.params.subscribe(params => {
       if (params.id_banda) {
-        const idbanda = params.id_banda ? Number(params.id_banda) : null;
+        const idbanda = params.id_banda ? +params.id_banda : null;
+        this.banda = new Banda();
+        this.banda.id = idbanda;
         this.buscarAlbumPorBanda(idbanda);
       } else {
         this.consultar();
       }
     });
-
-  }
+ }
 
   buscarBanda() {
     this.bandaService.consultar().subscribe(resposta => {
@@ -162,6 +164,5 @@ export class AlbumListComponent implements OnInit {
   onSubmit(albumForm) {
 
   }
-
 }
 

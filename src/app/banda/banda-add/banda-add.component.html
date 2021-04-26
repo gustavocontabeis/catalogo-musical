@@ -1,3 +1,4 @@
+<p-confirmDialog header="Confirmação de exclusão" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 <p-panel header="Cadastro de Bandas">
     <form #bandaForm="ngForm" (ngSubmit)="onSubmit(bandaForm)">
         <div class="ui-g ui-fluid" *ngIf="banda">
@@ -22,5 +23,6 @@
     <div class="ui-dialog-buttonpane ui-helper-clearfix">
         <button pButton icon="pi pi-check" (click)="salvar()" label="Salvar" [disabled]="!bandaForm.valid"></button>
         <button pButton icon="pi pi-times" (click)="confirmarExcluir()" label="Excluir" class="ui-button-secondary" *ngIf="banda.id"></button>
+        <button pButton icon="pi pi-times" (click)="listar()" label="Listar" class="ui-button-secondary"></button>
     </div>
 </p-panel>
